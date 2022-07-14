@@ -1,0 +1,41 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTRATION PAGE</title>
+</head>
+<body style="background-image:url('{% static 'images/news_4.jpg' %}'); background-repeat:no-repeat;background-attachment:fixed;background-size: 100% 100%;">
+
+
+<h1 style="font-size: 70px;
+            background: linear-gradient(to right,red,
+                   blue,violet,green);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;">
+WELCOME TO <br>FUTURE TECH</h1>
+{% for msg in messages %}
+<h2 style="color:red">{{msg}}</h2>
+{% endfor %}
+
+<form action="register" method="POST">
+    {% csrf_token %}
+    <label><b style=font-size:100%;color:orange>First Name:</b></label><br>
+    <input type="text" name="first_name" placeholder="Enter your First name"><br><br>
+    <label><b style=font-size:100%;color:orange>Last Name:</b></label><br>
+    <input type="text" name="last_name" placeholder="Enter your Last name"><br><br>
+    <label><b style=font-size:100%;color:orange>User Name:</b></label><br>
+    <input type="text" name="username" placeholder="Enter a username"><br><br>
+    <label><b style=font-size:100%;color:orange>Email_id:</b></label><br>
+    <input type="email" name="email" placeholder="Enter your email id"><br><br>
+    <label><b style=font-size:100%;color:orange>DOB:</b></label><br>
+    <input type="date" ><br><br>
+    <label><b style=font-size:100%;color:orange>New_Password:</b></label><br>
+    <input type="Password" name="password" placeholder="Enter your New Password"><br><br>
+    <label><b style=font-size:100%;color:orange>Confirm_Password:</b></label><br>
+    <input type="Password" name="Cpassword" placeholder="Confirm your Password"><br><br><br>
+    <input type="Submit" value="Sign up" style="font-weight:bold;font-size:15px;background-color:blue;width:5em;height:2em;"> <br>
+</form>
+
+</body>
+</html>

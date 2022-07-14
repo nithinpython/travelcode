@@ -1,0 +1,25 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body style="background-image:url('{% static 'images/news.jpg' %}'); background-repeat:no-repeat;background-attachment:fixed;background-size: 100% 100%;">
+<h1 style="font-size: 90px;color:red;text-align:center;
+            background-color: black">
+LOGIN PAGE</h1>
+{% for msg in messages %}
+<h2 style="color:red">{{msg}}</h2>
+{% endfor %}
+<form action="login" method="POST">
+    {% csrf_token %}
+    <label><b style=font-size:30px;>Username:</b></label><br>
+    <input type="text" name="username" placeholder="Enter your Username"><br><br>
+    <label><b style=font-size:30px;>Password:</b></label><br>
+    <input type="password" name="password" placeholder="Enter your Password"><br><br>
+    <input type="Submit" value="LOGIN" style="font-weight:bold;font-size:15px;background-color:red;width:5em;height:2em;"> <br>
+
+</form>
+
+</body>
+</html>
